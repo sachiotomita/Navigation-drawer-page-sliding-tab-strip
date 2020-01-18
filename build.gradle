@@ -1,17 +1,22 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
-    
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.10.+'
-        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.10.+'
+        classpath 'com.android.tools.build:gradle:2.1.3'
+//        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.10.+'
+        classpath 'com.github.JakeWharton:sdk-manager-plugin:220bf7a88a7072df3ed16dc8466fb144f2817070'
+
     }
 }
 
 allprojects {
     repositories {
         mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com' }
     }
 }
 
@@ -19,14 +24,15 @@ apply plugin: 'android-sdk-manager'
 apply plugin: 'android'
 
 dependencies {
-    compile 'com.android.support:support-v4:19.1.0'
+//    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.android.support:support-v4:22.+'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
 
     defaultConfig {
         minSdkVersion 8
